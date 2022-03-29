@@ -40,8 +40,8 @@ btns.forEach(function (btn) {
 
         }
         //Waiting Image
-        animeImage.src = "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/source.gif";
-        animeImage.alt = "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/source.gif";
+        animeImage.src = "http://phette23.github.io/speed-is-a-feature/img/loadingBar.gif";
+        animeImage.alt = "http://phette23.github.io/speed-is-a-feature/img/loadingBar.gif";
         animeDescription.textContent = "";
         animeName.textContent = "";
         animeRating.textContent = "";
