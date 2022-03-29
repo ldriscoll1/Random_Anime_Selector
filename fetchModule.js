@@ -4,6 +4,7 @@ const animeName = document.querySelector("#name");
 const animeImage = document.querySelector("#image");
 const animeDescription = document.querySelector("#description");
 const animeRating = document.querySelector("#rating");
+//Adding in Button Functionality
 btns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
         const styles = e.currentTarget.classList;
@@ -38,6 +39,12 @@ btns.forEach(function (btn) {
             url += "10/1";
 
         }
+        //Waiting Image
+        animeImage.src = "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/source.gif";
+        animeImage.alt = "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/source.gif";
+        animeDescription.textContent = "";
+        animeName.textContent = "";
+        animeRating.textContent = "";
 
         fetch(url, {
             "method": "GET",
@@ -48,17 +55,20 @@ btns.forEach(function (btn) {
         })
         .then(res => res.json())
         .then(response => {
-            
+            //Loops through childs of the json
             Object.entries(response).forEach(([key, value]) => {
 
                 //Gets the anime section of the JSON
                 if(JSON.stringify(key).includes('anime')){
-                    //Loops through all the animes
-                    //For Each Loop to number from 0-99 which is the random anime in that genre
+                    
                     const randomPosition = Math.floor(Math.random() *100);
+                    //For Each looping through all 100 animes(0-99) until the random anime is found
+
                     Object.entries(value).forEach(([key2, value2]) => {
+
                         //Get the anime at the random position
                         if(JSON.stringify(key2).includes(randomPosition.toString())){
+
                             //Look through properties of the anime and get Name(2), image(3), Summary(4) and Rating(15)
                             var counter = 0;
                             Object.entries(value2).forEach(([key3, value3]) => {
