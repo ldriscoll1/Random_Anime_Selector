@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/ldriscoll1/Random_Anime_Selector/issues"
   },
-  "homepage": "https://github.com/ldriscoll1/Random_Anime_Selector#readme",
-  "dependencies": {
-    "node-fetch": "^3.2.3"
-  }
+  "homepage": "https://github.com/ldriscoll1/Random_Anime_Selector#readme"
 }
