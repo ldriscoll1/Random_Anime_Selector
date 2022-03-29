@@ -1,0 +1,22 @@
+{
+  "name": "random_anime_selector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fetchModule.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldriscoll1/Random_Anime_Selector.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ldriscoll1/Random_Anime_Selector/issues"
+  },
+  "homepage": "https://github.com/ldriscoll1/Random_Anime_Selector#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  }
+}
