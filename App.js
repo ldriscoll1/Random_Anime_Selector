@@ -1,4 +1,4 @@
-"strict mode";
+"use strict";
 //Getting Data from html
 const btns = document.querySelectorAll(".btn");
 const animeName = document.querySelector("#name");
@@ -47,19 +47,19 @@ btns.forEach(function (btn) {
       .then((response) => {
         //Gets the anime section of the JSON
         try {
-          const { anime: animeOptions = null } = response;
+          const { anime: animeOptions = undefined } = response;
           const randomPosition = Math.floor(Math.random() * 100);
 
           //Error Detection
           //Checks if animeOptions = {}
-          if (animeOptions == null) throw "Anime Option Not Found";
+          if (animeOptions == undefined) throw "Anime Option Not Found";
 
           //Gets anime at random position
-          const { [randomPosition]: animeDetails = null } = animeOptions;
+          const { [randomPosition]: animeDetails = undefined } = animeOptions;
 
           //Error Detection
           //Checks if animeDetails = {}
-          if (animeDetails == null) throw "Anime Details Not Found";
+          if (animeDetails == undefined) throw "Anime Details Not Found";
 
           //Look through properties of the anime and get Name, image, Summary and Rating
           const { image_url = "" } = animeDetails;
