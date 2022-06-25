@@ -10,10 +10,9 @@ btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     const styles = e.currentTarget.classList;
     //Setting Up Fetch
-    let url = "https://jikan1.p.rapidapi.com/genre/anime/";
 
     //Adds the URL for the different genres
-    let genreToUrlDict = {
+    const genreToUrlDict = {
       action: "1",
       adventure: "2",
       comedy: "4",
@@ -21,20 +20,17 @@ btns.forEach(function (btn) {
       drama: "8",
       fantasy: "10",
     };
-    Object.keys(genreToUrlDict).forEach(function (key) {
-      if (styles.contains(key)) {
-        url += genreToUrlDict[key] + "/1";
-      }
-    });
+    //Computing Genre based on button pressed and genre
+    const genre = styles[1];
+    const genreURL = genreToUrlDict[genre];
+    const url = "https://jikan1.p.rapidapi.com/genre/anime/" + genreURL + "/1";
 
     //Waiting Image
     animeImage.src =
       "http://phette23.github.io/speed-is-a-feature/img/loadingBar.gif";
-    animeImage.alt =
-      "http://phette23.github.io/speed-is-a-feature/img/loadingBar.gif";
-    animeDescription.textContent = "";
-    animeName.textContent = "";
-    animeRating.textContent = "";
+    animeDescription.classList.add(".hidden");
+    animeName.classList.add(".hidden");
+    animeRating.classList.add(".hidden");
 
     fetch(url, {
       method: "GET",
@@ -49,14 +45,12 @@ btns.forEach(function (btn) {
         try {
           const { anime: animeOptions = undefined } = response;
           const randomPosition = Math.floor(Math.random() * 100);
-
           //Error Detection
           //Checks if animeOptions = {}
           if (animeOptions == undefined) throw "Anime Option Not Found";
 
           //Gets anime at random position
           const { [randomPosition]: animeDetails = undefined } = animeOptions;
-
           //Error Detection
           //Checks if animeDetails = {}
           if (animeDetails == undefined) throw "Anime Details Not Found";

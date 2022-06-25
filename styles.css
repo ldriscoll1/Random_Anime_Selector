@@ -188,3 +188,11 @@ main {
   color: var(--clr-white);
   background: var(--clr-black);
 }
+.hidden {
+  display: 0;
+}
+.img {
+  width: 200px;
+  height: 300px;
+  display: 0;
+}
